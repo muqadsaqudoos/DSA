@@ -1,5 +1,5 @@
 def is_palindrom_by_recursion(string,s,e):
-    if s >= e :
+    if s > e :
         return True
     if string[s] == string[e]:
         return is_palindrom_by_recursion(string,s+1,e-1)
