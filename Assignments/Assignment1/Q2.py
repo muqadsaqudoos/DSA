@@ -4,5 +4,5 @@ def reverse_string_recursion(string):
     return reverse_string_recursion(string[1:])+string[0]
 
 
-a = "hahahahha"
+a = "Ali"
 print(reverse_string_recursion(a))

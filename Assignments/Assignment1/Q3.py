@@ -15,7 +15,7 @@ def binary_search_recursion(arr,s,e,key):
         return binary_search_recursion(arr,s,mid-1,key)
 
 arr = [1,4,7,8,78,90]
-key = 78
+key = 2
 b = binary_search_recursion(arr,0,len(arr)-1,key)
 if b :
     print(f"{key} is in list")
