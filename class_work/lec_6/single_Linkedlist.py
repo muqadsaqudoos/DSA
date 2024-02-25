@@ -46,22 +46,23 @@ class linkedList:
                 return
             temp2 = temp
             temp = temp.next
-
+        """
     def insert_after(self,val,key):
         if self.head is None:
             return 
+        elif self.head.val == key:
+            self.head.next = node(val)
         temp1 = self.head
         temp2 = self.head.next
         while temp2 is not None:
-            if temp1.val == key and temp2 is None:
-                del temp2
-                temp1.next = None
-                return 
-            elif temp1.val == key:
-                temp1.next = temp2.next
-                del temp2
-
-
+            if temp1.val == key:
+                newNode = node(val)
+                newNode.next = temp2
+                temp1.next = newNode
+            temp1 = temp1.next
+            temp2 = temp2.next
+        
+"""
 
 
     #Remove
@@ -174,37 +175,41 @@ class linkedList:
             temp2 = temp2.next.next
 
         return temp1.val
+    
+    #task 2
+    def remove_kth_node(self,key):
+        if self.head is None:
+            return False
+        if self.head.val == key:
+            self.head = None
+            return True
+        temp1 = self.head
+        temp2 = self.head.next
+        while temp2 is not None:
+            if temp2.val == key and temp2.next is None :
+                temp1.next = None
+                return
+            elif temp2.val == key:
+                temp1.next = temp2.next
+                del temp2
+
+            temp1 = temp1.next
+            temp2 = temp2.next
+
+            
+
+        
+
 
 def main():
     root = linkedList()
-    """
-    root.insert_at_head(5)
-    root.insert_at_head(10)
-    root.insert_at_head(15)
-    root.insert_at_head(20)
-    root.insert_at_head(25)
-    """
     root.insert_at_tail(5)    
     root.insert_at_tail(10)    
     root.insert_at_tail(20)    
     root.insert_at_tail(23)    
-    root.insert_at_tail(25)    
-    #root.insert_after(17,5)
+    root.insert_at_tail(25) 
+    #print(root.remove_kth_node(20))  
     root.display()
-    #print(root.count())
-    print()
-    print(root.get_middle())
-    """
-    a = root.search(2)
-    if a:
-        print("\nElelement in linked List")
-    else:
-        print("\nElelement not in linked List")
-
-    root.update(5,2)
-    root.display()
-    """
-
  
 main()
 
