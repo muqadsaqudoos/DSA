@@ -39,16 +39,15 @@ class DoublyLinkedList:
             self.head.prev = newNode
             self.head = newNode
             return
-            
-        
         temp = self.head
-        while temp.next is not None:
+        while temp is not None:
             if temp.data == key:
                 newNode = Node(data)
                 newNode.next = temp
                 newNode.prev = temp.prev
+                temp.prev.next = newNode
                 temp.prev = newNode
-                temp.next = newNode
+                return
             temp = temp.next
 
         
@@ -68,6 +67,8 @@ def main():
     root.insert_at_tail(15)
     root.insert_at_tail(20)
     
+    root.display()
+    root.insert_before(2,5)
     root.display()
 
 main()
