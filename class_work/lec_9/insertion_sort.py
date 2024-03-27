@@ -1,4 +1,4 @@
-def selection_sort(arr):
+def insertion_sort(arr):
     for i in range(1,len(arr)):
         key = arr[i]
         j = i-1
@@ -10,4 +10,4 @@ def selection_sort(arr):
 
 
 a = [0,9,4,3,11,15,2,5,8,3,1,9,100,-1]
-print(selection_sort(a))
+print(insertion_sort(a))
