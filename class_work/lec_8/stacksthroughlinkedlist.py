@@ -40,12 +40,23 @@ class Stacks:
         if self.is_empty():
             return "Stack is empty"
         return self.top.data
+    
+    def size(self):
+        if self.top is None:
+            return "Stack is empty"
+        temp = self.top
+        count = 0
+        while temp :
+            temp = temp.next
+            count += 1
+        return count
 def main():
     root = Stacks()
     """
     root.push(4)
     root.push(5)
     root.push(6)
+  
     print(root.count)
     root.display()
 
@@ -56,7 +67,7 @@ def main():
     root.pop()
     root.is_empty()
     """
-    print(root.pop())
+    print(root.size())
 main()
 
 

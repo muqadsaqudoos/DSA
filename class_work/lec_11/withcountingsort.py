@@ -4,7 +4,6 @@ import time
 def counting_sort(arr):
     max_val = max(arr)
     counts = [0] * (max_val + 1)
-
     for num in arr:
         counts[num] += 1
 

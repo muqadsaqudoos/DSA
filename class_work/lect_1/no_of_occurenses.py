@@ -5,6 +5,7 @@ def no_of_occurences(list):
             count_dict[element] += 1
         else:
             count_dict[element] = 1
+    print(count_dict)
 
     for element, count in count_dict.items():
         print(f"{element} occur {count} times")
